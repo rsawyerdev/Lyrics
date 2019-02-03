@@ -2,9 +2,12 @@ import React, { Component, Button } from 'react';
 import reactCSS from 'reactcss'
 import logo from './logo.svg';
 import Songs from './containers/Songs'
+import Lyrics from './components/songs/Lyrics'
+
 
 export const states = {
-  SONGS: 'Songs'
+  SONGS: 'Songs',
+  LYRICS: 'Lyrics'
 }
 
  class App extends Component {
@@ -14,6 +17,15 @@ constructor(props) {
   this.state = {
     currentState: states.SONGS
   }
+}
+
+setAppState = (newPage) => {
+  console.log(newPage)
+  this.setState({
+      currentState: newPage
+  },()=> {
+    console.log(this.state.currentState)
+  })
 }
 
   render() {
@@ -41,9 +53,12 @@ constructor(props) {
     let container
     switch(this.state.currentState){
       case states.SONGS :
-       container = <Songs />
-    }
-
+       container = <Songs setAppState={this.setAppState}/>
+       break
+       case states.LYRICS :
+        container = <Lyrics />
+    } 
+      
     return (
       <div style={styles.container}>
       {/*<header style={styles.header}>

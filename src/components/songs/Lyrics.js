@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import reactCSS from 'reactcss'
-
+import { states } from '../../App'
 
 
 
@@ -17,26 +17,12 @@ export default class Song extends Component {
           minHeight: '100vh',
           width: 600,
           //justifyContent: 'flex-start',
-        },
-        header: {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            fontSize: '28'
-        },
-        list: {
-            //alignSelf: 'flex-end  '
         }
       }
     })
     return (
       <div style={styles.container}>
-      <div style={styles.header}>
-    
-      <div style={styles.list}>Song 1</div>
-
-      <div>Artist 1</div>
-      </div>
+      this is the lyrics to a song
       </div>
     );
   }

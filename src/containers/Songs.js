@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import reactCSS from 'reactcss'
 import Song from '../components/songs/Song'
+import { states } from '../App'
 
 
 
@@ -41,7 +42,7 @@ export default class Songs extends Component {
       <div>Song</div>
       <div>Artist</div>
       </div>
-      <div style={styles.flatlist}>
+      <div style={styles.flatlist} onClick={() => this.props.setAppState(states.LYRICS)}>
           <Song />
       </div>
       </div>
