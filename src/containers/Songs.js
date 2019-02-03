@@ -23,8 +23,11 @@ export default class Songs extends Component {
             fontSize: 20,
             width: 200
         },
-        flatlist: {
-            overFlow: 'auto'
+        header: {
+            display: 'flex',
+            flexDirection: 'row',
+            height: '100%',
+            justifyContent: 'space-evenly',
         }
       }
     })
@@ -34,6 +37,10 @@ export default class Songs extends Component {
       <div style={styles.container}>
       <header>Songs</header>
       <input style={styles.search}type="text" placeholder="Song Search..."></input>
+      <div style={styles.header}>
+      <div>Song</div>
+      <div>Artist</div>
+      </div>
       <div style={styles.flatlist}>
           <Song />
       </div>

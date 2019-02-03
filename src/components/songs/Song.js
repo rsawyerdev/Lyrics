@@ -21,9 +21,6 @@ export default class Song extends Component {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-evenly',
-            borderStyle: 'solid',
-            borderWidth: 2,
-            borderColor: 'red',
             fontSize: '28'
         },
         list: {
@@ -34,10 +31,10 @@ export default class Song extends Component {
     return (
       <div style={styles.container}>
       <div style={styles.header}>
-      <header>Artist</header>
-      <h1 style={styles.list}>Artist 1</h1>
-      <header>Songs</header>
-      <h1>Song 1</h1>
+    
+      <div style={styles.list}>Song 1</div>
+
+      <div>Artist 1</div>
       </div>
       </div>
     );
