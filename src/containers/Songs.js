@@ -36,7 +36,7 @@ export default class Songs extends Component {
     
     return (
       <div style={styles.container}>
-      <header>Songs</header>
+
       <input style={styles.search}type="text" placeholder="Song Search..."></input>
       <div style={styles.header}>
       <div>Song</div>

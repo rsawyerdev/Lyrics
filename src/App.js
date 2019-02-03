@@ -3,11 +3,15 @@ import reactCSS from 'reactcss'
 import logo from './logo.svg';
 import Songs from './containers/Songs'
 import Lyrics from './components/songs/Lyrics'
-
+import Header from './components/global/Header'
+import Playlist from './containers/Playlist'
+import Login from './containers/Login'
 
 export const states = {
+  LOGIN: 'Login',
   SONGS: 'Songs',
-  LYRICS: 'Lyrics'
+  LYRICS: 'Lyrics',
+  PLAYLIST: 'Playlist'
 }
 
  class App extends Component {
@@ -34,37 +38,35 @@ setAppState = (newPage) => {
       default: {
         container: {
           display: 'flex',
+          flexDirection: 'column',
           backgroundColor: 'black',
           color: 'blue',
-          //minHeight: '100vh',
-          //width: '100%',
-          justifyContent: 'center'
-        },
-        header: {
-          display: 'flex',
-          alignItems: 'center',
           height: '100%',
-          width: '100%',
-          justifyContent: 'space-between',
+          //width: '100%',
+          justifyContent: 'space-evenly'
         }
       }
     })
 
     let container
     switch(this.state.currentState){
+      /*case states.LOGIN :
+      container = <Login setAppState={this.setAppState}/>
+      break*/
       case states.SONGS :
        container = <Songs setAppState={this.setAppState}/>
        break
        case states.LYRICS :
         container = <Lyrics />
+        break
+        case states.PLAYLIST : 
+        container = <Playlist />
+        break
     } 
       
     return (
       <div style={styles.container}>
-      {/*<header style={styles.header}>
-        <button>Songs</button>
-        <button>Playlists</button>
-    </header>*/}
+      <Header setAppState={this.setAppState}/>
       {container}
       </div>
     );
