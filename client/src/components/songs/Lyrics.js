@@ -9,7 +9,7 @@ export default class Song extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            lyrics: "These are the lyrics again" 
+            lyrics: "These are the lyrics, These are the lyrics, These are the lyrics, These are the lyrics, These are the lyrics, These are the lyrics, These are the lyrics, These are the lyrics ,These are the lyrics, These are the lyrics, These are the lyrics" 
         }
     }
 
@@ -29,28 +29,33 @@ export default class Song extends Component {
         container: {
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: 'grey',
-          color: '#66ff33',
+
+          alignItems:'center',  
           minHeight: '100vh',
-          width: 600,
-          //justifyContent: 'flex-start',
+          
+          justifyContent: 'center',
         },
         lyrics: {
-            fontSize: 22
+            fontSize: 40,
+            color: '#66ff33',
+            backgroundColor: 'grey',
+            width: '80%',
+            height: '80vh',
+            textAlign: 'center'
         }
       }
     })
     return (
       <div style={styles.container}>
-      <input style={styles.lyrics}
-      type="text"
+      <textarea style={styles.lyrics}
+      wrap="hard"
       value={this.state.lyrics}
-      onChange={this.onChange}>
+      onChange={this.onChange}
+      >
       
-      </input>
+      </textarea>
       
       </div>
     );
   }
 }
-
