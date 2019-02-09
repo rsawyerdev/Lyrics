@@ -16,19 +16,26 @@ export default class Songs extends Component {
           backgroundColor: 'black',
           color: 'blue',
           minHeight: '100vh',
-          //width: '100%',
+          width: '100%',
           justifyContent: 'space-evenly'
         },
         search: {
             height: '10%',
             fontSize: 20,
-            width: 200
+            width: 200,
+            alignSelf: 'center',
+            borderRadius: 3
         },
         header: {
             display: 'flex',
             flexDirection: 'row',
             height: '100%',
             justifyContent: 'space-evenly',
+        },
+        flatlist: {
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'center'
         }
       }
     })
