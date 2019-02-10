@@ -1,10 +1,10 @@
 import React, { Component, Button } from 'react';
 import reactCSS from 'reactcss'
-import logo from './logo.svg';
 import Songs from './containers/Songs'
 import Lyrics from './components/songs/Lyrics'
 import Header from './components/global/Header'
 import Playlist from './containers/Playlist'
+import Api from './util/Api'
 import Login from './containers/Login'
 
 export const states = {
@@ -21,6 +21,7 @@ constructor(props) {
   this.state = {
     currentState: states.SONGS
   }
+  this.api = new Api()
 }
 
 setAppState = (newPage) => {
@@ -54,7 +55,7 @@ setAppState = (newPage) => {
       container = <Login setAppState={this.setAppState}/>
       break*/
       case states.SONGS :
-       container = <Songs setAppState={this.setAppState}/>
+       container = <Songs setAppState={this.setAppState} api={this.api}/>
        break
        case states.LYRICS :
         container = <Lyrics />

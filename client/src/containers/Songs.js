@@ -4,8 +4,27 @@ import Song from '../components/songs/Song'
 import { states } from '../App'
 
 
-
 export default class Songs extends Component {
+  constructor(props) {
+    super(props) 
+    this.state = {
+      songs : []
+    }
+  }
+
+  componentDidMount = () => {
+    this.getSongs()
+}
+
+getSongsCallback = (songs) => {
+  this.setState({
+    songs : songs
+  })
+}
+
+getSongs = () => {
+    this.props.api.getSongs(this.getSongsCallback)
+}
   render() {
 
     const styles = reactCSS({
@@ -50,7 +69,12 @@ export default class Songs extends Component {
       <div>Artist</div>
       </div>
       <div style={styles.flatlist} onClick={() => this.props.setAppState(states.LYRICS)}>
-          <Song />
+          {this.state.songs && this.state.songs.map(song => {
+            return(<Song song = {song}/>)
+
+          })}
+          {// map loops over each element in the array executing 
+          }
       </div>
       </div>
     )

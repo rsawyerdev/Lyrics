@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import reactCSS from 'reactcss'
 
-
-
-
 export default class Song extends Component {
   render() {
 
@@ -37,9 +34,9 @@ export default class Song extends Component {
       <div style={styles.container}>
       <div style={styles.header}>
     
-      <div style={styles.list}>Jeff Buckley</div>
+      <div style={styles.list}>{this.props.song.artist}</div>
 
-      <div>Grace</div>
+      <div>{this.props.song.title}</div>
       </div>
       </div>
     );
